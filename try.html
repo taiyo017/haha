@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            height: 100rem;
+        }
+        .sony{
+            padding: 10rem;
+            text-align: center;
+            display: inline-block;
+        }
+        .yes{
+            background: green;
+            color: #ffffff;
+            padding: 0.5rem;
+        }
+        .moving-btn{
+            background: red;
+            color: #ffffff;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="sony">
+            <p><h1>Do you love me Sony? </h1></p>
+            <button class="yes"onclick="check()">Yes</button>
+            <button id="movingButton" class="moving-btn">No</button>
+        </div>
+    </div>
+    <script>
+           var a = document.getElementsByClassName('yes');
+        var a = document.getElementsByClassName('no');
+    function check(){
+     alert('I love you more Dalli :)');
+    }
+
+    document.getElementById('movingButton').addEventListener('click', function() {
+  moveButtonRandomly(document.getElementById('movingButton'), 10, 100);
+});
+
+function moveButtonRandomly(element, duration, interval) {
+  var count = 0;
+  var moveInterval = setInterval(function() {
+    var randomX = Math.random() * window.innerWidth;
+    var randomY = Math.random() * window.innerHeight;
+    element.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
+    count++;
+    if (count >= duration) {
+      clearInterval(moveInterval);
+      element.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
+    }
+  }, interval);
+}
+
+    </script>
+</body>
+</html>
